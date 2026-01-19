@@ -7,14 +7,12 @@ extends Node2D
 func _ready():
 	timer.timeout.connect(_on_timer_timeout)
 	
-	# 只有听到游戏开始，我才开始工作
 	GameEvents.game_started.connect(func(): timer.start())
-	# 听到游戏结束，我就下班
 	GameEvents.game_over.connect(func(): timer.stop())
 
 func _on_timer_timeout():
 	var pipe = pipe_scene.instantiate()
-	pipe.position = Vector2(0, randf_range(-150, 150))
+	pipe.position = Vector2(400, randf_range(-150, 150))
 	
 	# 必须加组，方便 Main 清理
 	pipe.add_to_group("pipes") 

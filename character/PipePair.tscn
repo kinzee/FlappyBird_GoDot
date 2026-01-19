@@ -7,13 +7,13 @@
 size = Vector2(46, 318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxkon"]
-size = Vector2(46, 120)
+size = Vector2(46, 158)
 
 [node name="PipePair" type="Node2D"]
 script = ExtResource("1_hqll4")
 
 [node name="TopPipe" type="Area2D" parent="."]
-position = Vector2(0, -220)
+position = Vector2(0, -240)
 
 [node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
 texture = ExtResource("1_kxkon")
@@ -25,7 +25,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hqll4")
 
 [node name="BottomPipe" type="Area2D" parent="."]
-position = Vector2(0, 220)
+position = Vector2(0, 240)
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
 texture = ExtResource("1_kxkon")

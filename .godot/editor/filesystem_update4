@@ -13,3 +13,7 @@ res://scripts/GameUI.gd
 res://UI/ui.tscn
 res://scripts/PipeSpawner.gd
 res://scripts/Ground.gd
+res://scripts/GameData.gd
+res://ui/ui.tscn
+res://ui/UIGameOver.gd
+res://scripts/UIBackground.gd

@@ -1,0 +1,4 @@
+res://Character/main.tscn
+res://scripts/pipe_spawner.gd
+res://Character/PipePair.tscn
+res://scripts/main.gd

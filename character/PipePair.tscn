@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://clq5k77nyeqqg"]
+
+[ext_resource type="Script" uid="uid://bbxfhkvf5v25b" path="res://scripts/pipe_pair.gd" id="1_hqll4"]
+[ext_resource type="Texture2D" uid="uid://cx80yuf8fbfch" path="res://sprites/atlas.png" id="1_kxkon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqll4"]
+size = Vector2(46, 318)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxkon"]
+size = Vector2(46, 120)
+
+[node name="PipePair" type="Node2D"]
+script = ExtResource("1_hqll4")
+
+[node name="TopPipe" type="Area2D" parent="."]
+position = Vector2(0, -220)
+
+[node name="Sprite2D" type="Sprite2D" parent="TopPipe"]
+texture = ExtResource("1_kxkon")
+region_enabled = true
+region_rect = Rect2(110.636444, 641.4546, 55.45456, 326.3637)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopPipe"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hqll4")
+
+[node name="BottomPipe" type="Area2D" parent="."]
+position = Vector2(0, 220)
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomPipe"]
+texture = ExtResource("1_kxkon")
+region_enabled = true
+region_rect = Rect2(168.20007, 645, 51.700012, 322.30017)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomPipe"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hqll4")
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea" groups=["pipes"]]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kxkon")

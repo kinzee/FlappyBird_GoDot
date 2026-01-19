@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://beehqkhjq5ca6"]
+
+[ext_resource type="Texture2D" uid="uid://cx80yuf8fbfch" path="res://sprites/atlas.png" id="1_n2kac"]
+[ext_resource type="Script" uid="uid://v2s7wx3tnpqw" path="res://scripts/main.gd" id="1_yuolo"]
+[ext_resource type="PackedScene" uid="uid://omhv73v72acn" path="res://character/bird.tscn" id="2_whtcr"]
+[ext_resource type="Script" uid="uid://1vnman4tbkdu" path="res://scripts/pipe_spawner.gd" id="3_eywek"]
+[ext_resource type="PackedScene" uid="uid://clq5k77nyeqqg" path="res://character/PipePair.tscn" id="4_rjro3"]
+[ext_resource type="PackedScene" uid="uid://surkr4ptq34w" path="res://UI/ui.tscn" id="6_8y7l0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y7l0"]
+size = Vector2(289, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_yuolo")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_n2kac")
+region_enabled = true
+region_rect = Rect2(0, 0, 289.77893, 512.5792)
+
+[node name="Ground" type="Area2D" parent="background"]
+position = Vector2(0, 246)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/Ground"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_8y7l0")
+
+[node name="Bird" parent="." instance=ExtResource("2_whtcr")]
+gravity_scale = 3.0
+sleeping = true
+lock_rotation = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PipeSpawner" type="Node2D" parent="."]
+script = ExtResource("3_eywek")
+pipe_scene = ExtResource("4_rjro3")
+
+[node name="Timer" type="Timer" parent="PipeSpawner"]
+wait_time = 1.5
+
+[node name="UI" parent="." instance=ExtResource("6_8y7l0")]
+
+[connection signal="timeout" from="PipeSpawner/Timer" to="PipeSpawner" method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://surkr4ptq34w"]
 
 [sub_resource type="SystemFont" id="SystemFont_yuolo"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8y7l0"]
 font = SubResource("SystemFont_yuolo")

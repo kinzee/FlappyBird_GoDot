@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://omhv73v72acn"]
 
-[ext_resource type="Script" uid="uid://cud6d063xxdqv" path="res://scripts/bird.gd" id="1_8j6fr"]
+[ext_resource type="Script" uid="uid://cud6d063xxdqv" path="res://scripts/Bird.gd" id="1_8j6fr"]
 [ext_resource type="Texture2D" uid="uid://cx80yuf8fbfch" path="res://sprites/atlas.png" id="2_furyt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2dn4o"]

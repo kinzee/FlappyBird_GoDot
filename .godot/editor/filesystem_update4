@@ -2,3 +2,14 @@ res://Character/main.tscn
 res://scripts/pipe_spawner.gd
 res://Character/PipePair.tscn
 res://scripts/main.gd
+res://scripts/GameEvents.gd
+res://scripts/bird.gd
+res://scripts/pipe_pair.gd
+res://character/bird.tscn
+res://scripts/Bird.gd
+res://scripts/PipePair.gd
+res://scripts/Main.gd
+res://scripts/GameUI.gd
+res://UI/ui.tscn
+res://scripts/PipeSpawner.gd
+res://scripts/Ground.gd

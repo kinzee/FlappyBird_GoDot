@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://clq5k77nyeqqg"]
 
-[ext_resource type="Script" uid="uid://bbxfhkvf5v25b" path="res://scripts/pipe_pair.gd" id="1_hqll4"]
+[ext_resource type="Script" uid="uid://bbxfhkvf5v25b" path="res://scripts/PipePair.gd" id="1_hqll4"]
 [ext_resource type="Texture2D" uid="uid://cx80yuf8fbfch" path="res://sprites/atlas.png" id="1_kxkon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqll4"]

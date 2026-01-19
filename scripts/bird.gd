@@ -1,20 +1,33 @@
+# Bird.gd
 extends RigidBody2D
 
 @export var jump_force = -400.0
-var is_started = false # 状态标记
+@onready var hitbox = $Hitbox
+
+var is_active = false
 
 func _ready():
-	# 游戏刚运行时，将重力倍率设为 0，小鸟会悬浮在空中
-	gravity_scale = 0.0 
-	# 可选：给个向上的初速度让它看起来像在“飘”，或者写个Tween动画
+	# 初始化状态
+	gravity_scale = 0.0
+	is_active = false
+	GameEvents.game_started.connect(_on_game_started)
 
-func start_flying():
-	if is_started:
-		return
-	is_started = true
-	gravity_scale = 5.0 # 恢复重力 (根据你之前的设置调整数值)
-	jump() # 第一次点击同时也触发第一下跳跃
+func _physics_process(delta):
+	# 处理跳跃 (只有激活且没死的时候才能跳)
+	if is_active:
+		if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			jump()
 
 func jump():
 	linear_velocity.y = jump_force
 	angular_velocity = -5.0
+
+func _on_game_started():
+	is_active = true
+	gravity_scale = 5.0 # 恢复重力
+	jump() # 第一跳
+
+func die():
+	is_active = false
+	GameEvents.bird_died.emit()
+	GameEvents.game_over.emit()

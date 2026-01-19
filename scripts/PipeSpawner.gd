@@ -12,7 +12,7 @@ func _ready():
 
 func _on_timer_timeout():
 	var pipe = pipe_scene.instantiate()
-	pipe.position = Vector2(400, randf_range(-150, 150))
+	pipe.position = Vector2(350, randf_range(-150, 150))
 	
 	# 必须加组，方便 Main 清理
 	pipe.add_to_group("pipes") 

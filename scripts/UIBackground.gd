@@ -9,7 +9,7 @@ func _ready():
 func _process(delta):
 	# 修改 scroll_offset 来移动背景
 	# 只要一直减小 X 值，ParallaxLayer 就会自动处理循环
-	scroll_offset.x -= scroll_speed * delta
+	scroll_base_offset.x -= scroll_speed * delta
 
 func _on_game_over():
 	# 游戏结束，停止处理 _process，画面定格

@@ -1,6 +1,5 @@
 extends Node
 
-signal score_updated(current_score)
 signal high_score_updated(best_score)
 
 # 核心数据
@@ -17,11 +16,11 @@ func _ready() -> void:
 # --- 分数操作接口 ---
 func reset_score():
 	current_score = 0
-	score_updated.emit(current_score)
+	GameEvents.score_updated.emit(current_score)
 
 func add_score(amount: int = 1):
 	current_score += amount
-	score_updated.emit(current_score)
+	GameEvents.score_updated.emit(current_score)
 	
 	# 检查是否打破纪录
 	if current_score > high_score:

@@ -25,6 +25,7 @@ func _on_lethal_body_entered(body):
 
 func _on_score_area_entered(body):
 	if body.name == "Bird":
+		print("goal")
 		GameData.add_score()
 
 func _on_game_over():

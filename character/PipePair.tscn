@@ -7,7 +7,7 @@
 size = Vector2(46, 318)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxkon"]
-size = Vector2(46, 158)
+size = Vector2(29, 158)
 
 [node name="PipePair" type="Node2D"]
 script = ExtResource("1_hqll4")
@@ -39,5 +39,5 @@ shape = SubResource("RectangleShape2D_hqll4")
 [node name="ScoreArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea" groups=["pipes"]]
-position = Vector2(0, 1)
+position = Vector2(8.5, 1)
 shape = SubResource("RectangleShape2D_kxkon")
